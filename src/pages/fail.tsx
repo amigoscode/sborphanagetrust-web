@@ -31,7 +31,7 @@ function Fail() {
                 Payment Failed
               </div>
               <div className="text-center">
-                We couldn&apos;t process your payment
+                An error occurred during payment processing
               </div>
             </div>
 
