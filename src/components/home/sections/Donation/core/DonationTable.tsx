@@ -43,9 +43,10 @@ const styles = {
 
 export const Checkout = async (priceType: string) => {
   try {
-    await axios.post('/api/checkout', {
+    const response = await axios.post('/api/checkout', {
       price: priceType,
     });
+    window.location.href = response.data.url;
   } catch (err: any) {
     toast.error(err?.message);
   }
