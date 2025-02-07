@@ -36,9 +36,80 @@ export default async function handler(
           quantity: 1,
         },
       ],
+      custom_fields: [
+        {
+          key: 'giftaid',
+          label: {
+            type: 'custom',
+            custom: 'Gift Aid',
+          },
+          optional: false,
+          default: 'yes',
+          type: 'dropdown',
+          dropdown: {
+            options: [
+              {
+                label: 'Yes',
+                value: 'yes',
+              },
+              {
+                label: 'No',
+                value: 'no',
+              },
+            ],
+          },
+        },
+        {
+          key: 'happywithphone',
+          label: {
+            type: 'custom',
+            custom: 'Are Happy with Phone Call?',
+          },
+          optional: false,
+          default: 'yes',
+          type: 'dropdown',
+          dropdown: {
+            options: [
+              {
+                label: 'Yes',
+                value: 'yes',
+              },
+              {
+                label: 'No',
+                value: 'no',
+              },
+            ],
+          },
+        },
+        {
+          key: 'email',
+          label: {
+            type: 'custom',
+            custom: 'Are you happy to receive emails from us?',
+          },
+          optional: false,
+          default: 'yes',
+          type: 'dropdown',
+          dropdown: {
+            options: [
+              {
+                label: 'Yes',
+                value: 'yes',
+              },
+              {
+                label: 'No',
+                value: 'no',
+              },
+            ],
+          },
+        },
+      ],
       mode: priceKey === 'sponsorChild' ? 'subscription' : 'payment',
       success_url: `${req.headers.origin}/success`,
       cancel_url: `${req.headers.origin}/fail`,
+      phone_number_collection: {
+        enabled: true,
+      },
     });
 
     return res.status(200).json({ url: session.url as string });
