@@ -23,6 +23,8 @@ export default async function handler(
   try {
     const { price: priceKey }: { price: PriceKey } = req.body;
 
+    const paymentMode =
+      priceKey === 'sponsorChild' ? 'subscription' : 'payment';
     if (!prices[priceKey]) {
       return res.status(400).json({ error: 'Invalid price' });
     }
@@ -63,7 +65,7 @@ export default async function handler(
           key: 'happywithphone',
           label: {
             type: 'custom',
-            custom: 'Are Happy with Phone Call?',
+            custom: 'Are Happy to be contacted via phone?',
           },
           optional: false,
           type: 'dropdown',
@@ -156,7 +158,7 @@ export default async function handler(
             ]
           : []),
       ],
-      mode: priceKey === 'sponsorChild' ? 'subscription' : 'payment',
+      mode: paymentMode,
       success_url: `${req.headers.origin}/success`,
       cancel_url: `${req.headers.origin}/fail`,
       phone_number_collection: {
