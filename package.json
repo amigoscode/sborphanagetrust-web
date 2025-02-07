@@ -19,9 +19,9 @@
     "postcss": "^8.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-hook-form": "^7.48.0",
     "react-hot-toast": "^2.5.1",
-    "stripe": "^17.5.0"
+    "stripe": "^17.5.0",
+    "react-hook-form": "^7.48.0"
   },
   "devDependencies": {
     "@types/node": "^20.8.9",
