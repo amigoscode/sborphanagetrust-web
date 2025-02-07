@@ -103,6 +103,58 @@ export default async function handler(
             ],
           },
         },
+        ...(priceKey === 'zakat'
+          ? [
+              {
+                key: 'zakat',
+                label: {
+                  type: 'custom',
+                  custom: 'Zakat',
+                },
+                optional: false,
+                default: 'regular',
+                type: 'dropdown',
+                dropdown: {
+                  options: [
+                    {
+                      label: 'Regular',
+                      value: 'regular',
+                    },
+                    {
+                      label: 'Zakatul fitr',
+                      value: 'zakatulfitr',
+                    },
+                  ],
+                },
+              },
+            ]
+          : []),
+        ...(priceKey === 'sadaqah'
+          ? [
+              {
+                key: 'sadaqah',
+                label: {
+                  type: 'custom',
+                  custom: 'Sadaqah',
+                },
+                optional: false,
+                default: 'regular',
+                type: 'dropdown',
+                dropdown: {
+                  options: [
+                    {
+                      label: 'Regular',
+                      value: 'regular',
+                    },
+                    {
+                      label: 'Fidyah',
+                      value: 'fidyah',
+                    },
+                  ],
+                },
+              },
+            ]
+          : []),
       ],
       mode: priceKey === 'sponsorChild' ? 'subscription' : 'payment',
       success_url: `${req.headers.origin}/success`,
