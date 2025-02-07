@@ -1,4 +1,8 @@
+/* eslint-disable import/no-extraneous-dependencies */
+
+import axios from 'axios';
 import React from 'react';
+import toast from 'react-hot-toast';
 
 import Button from '@/components/core/Button';
 import CheckIcon from '@/icons/home/CheckIcon';
@@ -13,7 +17,7 @@ type Props = {
   features: string[];
   label: string;
   hasSign: boolean;
-  link: string;
+  priceType: string;
 };
 
 const styles = {
@@ -37,6 +41,17 @@ const styles = {
   },
 };
 
+export const Checkout = async (priceType: string) => {
+  try {
+    const response = await axios.post('/api/checkout', {
+      price: priceType,
+    });
+    window.location.href = response.data.url;
+  } catch (err: any) {
+    toast.error(err?.message);
+  }
+};
+
 export default function DonationTable({
   className,
   appearance = 'normal',
@@ -45,7 +60,7 @@ export default function DonationTable({
   price,
   features,
   label,
-  link,
+  priceType,
   hasSign,
 }: Props) {
   return (
@@ -108,15 +123,9 @@ export default function DonationTable({
             <Button
               appearance={styles[appearance].button as any}
               className={styles[appearance].buttStyle}
+              onClick={() => Checkout(priceType)}
             >
-              <a
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="paypal-page"
-              >
-                {label}
-              </a>
+              {label}
             </Button>
           </div>
         </div>

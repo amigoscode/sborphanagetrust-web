@@ -65,7 +65,6 @@
           "error",
           { "argsIgnorePattern": "^_" }
         ]
-      
       }
     }
   ]

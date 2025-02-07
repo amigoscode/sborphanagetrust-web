@@ -12,12 +12,14 @@
   },
   "dependencies": {
     "@typescript-eslint/parser": "^6.0.0",
+    "axios": "^1.7.9",
     "hamburger-react": "^2.5.0",
     "next": "12.2.0",
     "next-seo": "^6.4.0",
     "postcss": "^8.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hot-toast": "^2.5.1",
     "stripe": "^17.5.0",
     "react-hook-form": "^7.48.0"
   },

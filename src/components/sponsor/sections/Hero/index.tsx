@@ -3,6 +3,7 @@ import React from 'react';
 import Button from '@/components/core/Button';
 import Heading from '@/components/core/Heading';
 import Paragraph from '@/components/core/Paragraph';
+import { Checkout } from '@/components/home/sections/Donation/core/DonationTable';
 import HeroLayout from '@/components/layouts/HeroLayout';
 import HeartIcon from '@/icons/home/heartIcon';
 import heroBg from '@/public/assets/sponsor/hero-bg.png';
@@ -17,15 +18,11 @@ export default function Hero() {
           className="mb-4"
         />
       </div>
-      <Button className="duration-200 hover:opacity-90">
-        <a
-          href="https://www.paypal.com/paypalme/sborphanage"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="donate now"
-        >
-          Donate Now
-        </a>
+      <Button
+        className="duration-200 hover:opacity-90"
+        onClick={() => Checkout('sponsorChild')}
+      >
+        <span>Donate Now</span>
         <div className="ml-3 w-4">
           <HeartIcon />
         </div>

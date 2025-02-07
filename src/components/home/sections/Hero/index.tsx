@@ -22,7 +22,7 @@ export default function Hero() {
       </div>
       <Button className="duration-200 hover:opacity-90">
         <a
-          href="https://www.paypal.com/paypalme/sborphanage"
+          href="/donate"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="donate now"
