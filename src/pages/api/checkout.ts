@@ -62,45 +62,27 @@ export default async function handler(
           },
         },
         {
-          key: 'happywithphone',
+          key: 'contact',
           label: {
             type: 'custom',
-            custom: 'Are Happy to be contacted via phone?',
+            custom: 'Are you happy to be contacted via?',
           },
           optional: false,
           type: 'dropdown',
           dropdown: {
-            default_value: 'yes',
+            default_value: 'emailphone',
             options: [
               {
-                label: 'Yes',
-                value: 'yes',
+                label: 'Email',
+                value: 'email',
               },
               {
-                label: 'No',
-                value: 'no',
-              },
-            ],
-          },
-        },
-        {
-          key: 'email',
-          label: {
-            type: 'custom',
-            custom: 'Are you happy to receive emails from us?',
-          },
-          optional: false,
-          type: 'dropdown',
-          dropdown: {
-            default_value: 'yes',
-            options: [
-              {
-                label: 'Yes',
-                value: 'yes',
+                label: 'Phone',
+                value: 'phone',
               },
               {
-                label: 'No',
-                value: 'no',
+                label: 'Email & Phone',
+                value: 'emailphone',
               },
             ],
           },
@@ -116,7 +98,7 @@ export default async function handler(
                 optional: false,
                 type: 'dropdown',
                 dropdown: {
-                  default_text: 'Regular',
+                  default_value: 'regular',
                   options: [
                     {
                       label: 'Regular',
@@ -142,7 +124,7 @@ export default async function handler(
                 optional: false,
                 type: 'dropdown',
                 dropdown: {
-                  default_text: 'regular',
+                  default_value: 'regular',
                   options: [
                     {
                       label: 'Regular',
@@ -168,6 +150,6 @@ export default async function handler(
 
     return res.status(200).json({ url: session.url as string });
   } catch (error) {
-    return res.status(500).json({ error: 'Internal Server Error' });
+    return res.status(500).json({ error });
   }
 }
