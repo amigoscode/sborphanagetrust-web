@@ -44,9 +44,9 @@ export default async function handler(
             custom: 'Gift Aid',
           },
           optional: false,
-          default: 'yes',
           type: 'dropdown',
           dropdown: {
+            default_value: 'yes',
             options: [
               {
                 label: 'Yes',
@@ -66,9 +66,9 @@ export default async function handler(
             custom: 'Are Happy with Phone Call?',
           },
           optional: false,
-          default: 'yes',
           type: 'dropdown',
           dropdown: {
+            default_value: 'yes',
             options: [
               {
                 label: 'Yes',
@@ -88,9 +88,9 @@ export default async function handler(
             custom: 'Are you happy to receive emails from us?',
           },
           optional: false,
-          default: 'yes',
           type: 'dropdown',
           dropdown: {
+            default_value: 'yes',
             options: [
               {
                 label: 'Yes',
@@ -112,9 +112,9 @@ export default async function handler(
                   custom: 'Zakat',
                 },
                 optional: false,
-                default: 'regular',
                 type: 'dropdown',
                 dropdown: {
+                  default_text: 'Regular',
                   options: [
                     {
                       label: 'Regular',
@@ -138,9 +138,9 @@ export default async function handler(
                   custom: 'Sadaqah',
                 },
                 optional: false,
-                default: 'regular',
                 type: 'dropdown',
                 dropdown: {
+                  default_text: 'regular',
                   options: [
                     {
                       label: 'Regular',
