@@ -36,7 +36,7 @@ export default async function handler(
           quantity: 1,
         },
       ],
-      mode: 'payment',
+      mode: priceKey === 'sponsorChild' ? 'subscription' : 'payment',
       success_url: `${req.headers.origin}/success`,
       cancel_url: `${req.headers.origin}/fail`,
     });
