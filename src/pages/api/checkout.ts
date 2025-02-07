@@ -5,7 +5,7 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY, {
 });
 
 const prices = {
-  sponsorChild: 'price_1QklU6EiGv4EG4FUlLOPiJHw',
+  sponsorChild: 'price_1QkRbcEiGv4EG4FUTRNQpG5F',
   sadaqah: 'price_1PJd2wEiGv4EG4FUsANVQXbw',
   zakat: 'price_1PJcheEiGv4EG4FUtnQRURkW',
 };
